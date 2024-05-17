@@ -43,7 +43,7 @@ export const createPost = (req, res, next) => {
     return next(error);
   }
   posts.push(newPost);
-  res.status(201).json(posts);
+  res.status(201).json(newPost);
 };
 
 //@desc Update post
@@ -58,7 +58,7 @@ export const updatePost = (req, res, next) => {
     return next(error);
   }
   post.title = req.body.title;
-  res.status(200).json(posts);
+  res.status(200).json(post);
 };
 
 //@desc Delete post
@@ -73,5 +73,5 @@ export const deletePost = (req, res, next) => {
     return next(error);
   }
   posts = posts.filter((post) => post.id !== id);
-  res.status(200).json(posts);
+  res.status(200).json(true);
 };

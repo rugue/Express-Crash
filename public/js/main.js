@@ -1,16 +1,16 @@
 const output = document.querySelector("#output");
 const button = document.querySelector("#get-posts-btn");
-const form = document.querySelector("#add-posts-form");
+const form = document.querySelector("#add-post-form");
 
 //Get and show posts
 async function showPosts() {
   try {
-    const res = await fetch("http://localhost:8000/api/posts");
+    const res = await fetch("http://localhost:8080/api/posts");
     if (!res.ok) {
       throw new Error("Failed to fetch posts");
     }
 
-    const posts = await res.json;
+    const posts = await res.json();
     output.innerHTML = "";
 
     posts.forEach((post) => {
@@ -30,7 +30,7 @@ async function addPost(e) {
   const title = formData.get("title");
 
   try {
-    const res = await fetch("http://localhost:8000/api/posts", {
+    const res = await fetch("http://localhost:8080/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
