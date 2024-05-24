@@ -14,13 +14,13 @@ router.get("/", getPosts);
 //Get single post
 router.get("/:id", getPost);
 
-//Create new post
+//Create a new post
 router.post("/", createPost);
 
-//Update Post
+//Update a Post
 router.put("/:id", updatePost);
 
-//Delete Post
+//Delete the Post
 router.delete("/:id", deletePost);
 
 export default router;
