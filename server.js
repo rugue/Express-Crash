@@ -5,6 +5,16 @@ import posts from "./routes/posts.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
+import mongoose from "mongoose";
+import connectDB from "./db.js";
+import db from "./db.js";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load environment variables from .env file
+
+// Connect to MongoDB
+connectDB();
+
 const port = process.env.PORT || 8000;
 
 //Get the directory name
